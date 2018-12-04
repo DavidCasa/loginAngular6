@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../servicios/auth.service';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -18,10 +18,12 @@ export class NavbarComponent implements OnInit {
     this.authService.getAuth().subscribe(auth =>{
       if(auth){
         this.isLogin=true;
+        console.log(this.isLogin);
         this.nombreUser= auth.displayName;
         this.email = auth.email;
-      }else{
+      } else {
         this.isLogin=false;
+        console.log(this.isLogin);
       }
     })
   }
