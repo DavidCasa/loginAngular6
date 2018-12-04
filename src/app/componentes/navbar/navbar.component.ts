@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   public isLogin : boolean;
   public nombreUser: string;
   public email: string;
+  public fotoUser: string;
   constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
@@ -22,6 +23,7 @@ export class NavbarComponent implements OnInit {
         console.log(this.isLogin);
         this.nombreUser= auth.displayName;
         this.email = auth.email;
+        this.fotoUser = auth.photoURL;
       } else {
         this.isLogin=false;
         console.log(this.isLogin);
