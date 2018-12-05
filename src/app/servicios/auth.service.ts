@@ -17,6 +17,12 @@ export class AuthService {
   loginGoogle(){
     return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
+
+  loginFacebook(){
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+  }
+
+
   registerUser(email: string, pass: string){
     return new Promise((resolve, reject) => {
       this.afAuth.auth.createUserWithEmailAndPassword(email, pass)
